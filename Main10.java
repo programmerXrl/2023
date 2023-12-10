@@ -1,11 +1,28 @@
 package December;
 
+import July.ListNode;
+
 import java.util.Arrays;
 
 public class Main10 {
     public static void main(String[] args) {
         Main10 tool = new Main10();
         System.out.println(tool.minSubArrayLen(10,new int[]{1,4,4}));
+    }
+
+
+    public ListNode removeElements(ListNode head, int val) {
+        ListNode Head = new ListNode();
+        ListNode cur = head;
+        ListNode tmp = Head;
+        while (cur != null) {
+            if (cur.val != val) {
+                tmp.next = cur;
+                tmp = tmp.next;
+            }
+            cur = cur.next;
+        }
+        return Head.next;
     }
 
     public int minSubArrayLen(int target, int[] nums) {
